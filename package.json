@@ -20,5 +20,9 @@
     "tape": "^4.7.0",
     "tape-around": "^2.2.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/ezpn/timeago-reverse"
+  }
 }
