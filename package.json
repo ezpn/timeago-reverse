@@ -1,6 +1,6 @@
 {
   "name": "timeago-reverse",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Getting approximate date from timeago generated string",
   "main": "index.js",
   "scripts": {
@@ -21,8 +21,8 @@
     "tape-around": "^2.2.0"
   },
   "dependencies": {},
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/ezpn/timeago-reverse"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ezpn/timeago-reverse"
   }
 }
