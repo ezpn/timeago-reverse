@@ -1,0 +1,24 @@
+{
+  "name": "timeago-reverse",
+  "version": "1.0.0",
+  "description": "Getting approximate date from timeago generated string",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape tests/**/*.js"
+  },
+  "keywords": [
+    "timeago",
+    "reverse",
+    "human",
+    "readable",
+    "date"
+  ],
+  "author": "Adam Urban",
+  "license": "MIT",
+  "devDependencies": {
+    "sinon": "^2.3.6",
+    "tape": "^4.7.0",
+    "tape-around": "^2.2.0"
+  },
+  "dependencies": {}
+}
