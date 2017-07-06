@@ -1,12 +1,12 @@
 const test = require('tape');
-const around = require('tape-around')
+const around = require('tape-around');
 const sinon = require('sinon');
 const rt = require('../index');
 
 const frozenTime = 1498749529000;
 
 // Adding before and after fake timers hooks
-testBlock = around(test)
+const testBlock = around(test)
   .before((t) => {
     this.clock = sinon.useFakeTimers(frozenTime);
     t.next();
