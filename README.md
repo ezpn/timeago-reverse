@@ -1,7 +1,6 @@
 # Timeago reverse
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/ezpn/timeago-reverse.svg)](https://greenkeeper.io/)
-
 [![Build Status](https://travis-ci.org/ezpn/timeago-reverse.svg?branch=master)](https://travis-ci.org/ezpn/timeago-reverse)
 [![Coverage Status](https://coveralls.io/repos/github/ezpn/timeago-reverse/badge.svg?branch=master)](https://coveralls.io/github/ezpn/timeago-reverse?branch=master)
 [![NPM version](https://img.shields.io/npm/v/timeago-reverse.svg)](https://www.npmjs.com/package/ezpn/timeago-reverse)
