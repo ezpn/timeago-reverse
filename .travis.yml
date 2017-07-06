@@ -4,8 +4,6 @@ git:
 cache:
   directories:
     - "node_modules"
-script:
-  - npm run eslint
 node_js:
   - '8'
   - '6'
