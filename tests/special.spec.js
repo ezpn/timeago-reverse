@@ -36,7 +36,7 @@ testBlock('yesterday', (t) => {
     new Date(frozenTime).getTime() / (timeUnits.day)
   ) * timeUnits.day - timeUnits.day;
 
-  t.equal(rt.parse('yesterday').getTime(), ms)
+  t.equal(rt.parse('yesterday').getTime(), ms);
   t.end();
 });
 
