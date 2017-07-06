@@ -20,14 +20,14 @@ testBlock('tomorrow', (t) => {
     new Date(frozenTime).getTime() / (timeUnits.day)
   ) * timeUnits.day + timeUnits.day;
 
-  t.equal(rt.parse('tomorrow').getTime(), ms)
+  t.equal(rt.parse('tomorrow').getTime(), ms);
   t.end();
 });
 
 testBlock('today', (t) => {
   const ms = Math.floor(new Date(frozenTime).getTime() / (timeUnits.day)) * timeUnits.day;
 
-  t.equal(rt.parse('today').getTime(), ms)
+  t.equal(rt.parse('today').getTime(), ms);
   t.end();
 });
 

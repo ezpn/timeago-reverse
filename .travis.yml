@@ -5,3 +5,4 @@ node_js:
   - '6.0'
 after_script:
   - npm run coveralls
+  - npm run eslint
