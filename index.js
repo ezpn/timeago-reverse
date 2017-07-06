@@ -13,7 +13,12 @@ timeUnits.months = timeUnits.month;
 timeUnits.year = timeUnits.day * 365;
 timeUnits.years = timeUnits.year;
 
+const futurePrefix = 'in';
 const futureSuffix = 'from now';
+
+const getCurrentDateInMs = () => {
+  return Math.floor(Date.now() / timeUnits.day) * timeUnits.day;
+};
 
 /**
  * Splits expression string to amount expression, unit and suffix.
@@ -29,7 +34,21 @@ const splitExpression = (timeExpression) => {
     amountExpr: null,
     unit: null,
     suffix: null,
+    prefix: null,
   };
+
+  // Special future prefix case
+  if (timeArr[0] === futurePrefix) {
+    time.prefix = timeArr.splice(0, 1)[0];
+  }
+
+  // Less than a minute special case
+  if (timeExpression.includes('less than a minute')) {
+    time.amountExpr = 30;
+    time.unit = 'seconds';
+
+    return time;
+  }
 
   // Cases starting with about
   if (timeArr[0] === 'about' && (timeArr[1] === 'a' || timeArr[1] === 'an')) {
@@ -38,9 +57,7 @@ const splitExpression = (timeExpression) => {
   } else if (timeArr[0] === 'a' || timeArr[0] === 'an' || timeArr[0] === 'few') {
     time.amountExpr = timeArr.splice(0, 1)[0];
   // Cases with no time amount expression (which start with a unit)
-  } else if (timeUnits[timeArr[0]] != null) {
-    // Noop
-  } else {
+  } else if (timeUnits[timeArr[0]] == null) {
     time.amountExpr = timeArr.splice(0, 1)[0];
   }
 
@@ -122,8 +139,8 @@ const getUnitMultiplier = (unit) => {
  *
  * @return {number}
  */
-const getTimeDirection = (suffix) => {
-  return suffix === futureSuffix ? +1 : -1;
+const getTimeDirection = (affix) => {
+  return (affix === futureSuffix || affix === futurePrefix) ? +1 : -1;
 };
 
 /**
@@ -151,16 +168,31 @@ const countDate = ({ amount, unitMultiplier, timeDirection }) => {
  * @return {Date}
  */
 const parse = (timeago) => {
+  timeago = timeago.toLowerCase();
+
+  if (timeago.includes('tomorrow')) {
+    const ms = getCurrentDateInMs() + timeUnits.day;
+
+    return new Date(ms);
+  }
+
   // Handling now cases
-  if (timeago.toLowerCase() === 'now'
-  || timeago.toLowerCase().includes('just now')
-  || timeago.toLowerCase().includes('any moment now')) {
+  if (timeago === 'now'
+  || timeago.includes('just now')
+  || timeago.includes('any moment now')) {
     return new Date();
   }
 
-  // Less than a minute case
-  if (timeago.toLowerCase().includes('less than a minute')) {
-    return new Date(Date.now() - 30 * 1000);
+  if (timeago.includes('today')) {
+    const ms = getCurrentDateInMs();
+
+    return new Date(ms);
+  }
+
+  if (timeago.includes('yesterday')) {
+    const ms = getCurrentDateInMs() - timeUnits.day;
+
+    return new Date(ms);
   }
 
   const splittedTimeExpr = splitExpression(timeago);
@@ -168,7 +200,7 @@ const parse = (timeago) => {
   const time = {
     amount: parseTimeAmount(splittedTimeExpr.amountExpr),
     unitMultiplier: getUnitMultiplier(splittedTimeExpr.unit),
-    timeDirection: getTimeDirection(splittedTimeExpr.suffix),
+    timeDirection: getTimeDirection(splittedTimeExpr.prefix || splittedTimeExpr.suffix),
   };
 
   return countDate(time);
