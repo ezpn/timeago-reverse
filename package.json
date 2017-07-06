@@ -1,6 +1,6 @@
 {
   "name": "timeago-reverse",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Getting approximate date from timeago generated string",
   "main": "index.js",
   "scripts": {
