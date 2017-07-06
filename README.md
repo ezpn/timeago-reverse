@@ -50,7 +50,7 @@ Format: `[a/an/${amount}] ${unit} [ago]`
 
 ### Future variations
 
-Format: `[a/an/${amount}] ${unit} from now`
+Format: `[in] [a/an/${amount}] ${unit} [from now]`
 
 - `second from now`
 - `a second from now`
