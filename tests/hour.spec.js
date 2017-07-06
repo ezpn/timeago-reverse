@@ -16,9 +16,9 @@ testBlock('hour ago', (t) => {
   t.end();
 });
 
-testBlock('a hour ago', (t) => {
+testBlock('an hour ago', (t) => {
   t.equal(
-    rt.parse('a hour ago').getTime(),
+    rt.parse('an hour ago').getTime(),
     new Date(frozenTime - timeUnits.hour).getTime()
   );
   t.end();
@@ -28,6 +28,22 @@ testBlock('1 hour ago', (t) => {
   t.equal(
     rt.parse('1 hour ago').getTime(),
     new Date(frozenTime - timeUnits.hour).getTime()
+  );
+  t.end();
+});
+
+testBlock('about an hour ago', (t) => {
+  t.equal(
+    rt.parse('about an hour ago').getTime(),
+    new Date(frozenTime - timeUnits.hour).getTime()
+  );
+  t.end();
+});
+
+testBlock('few hours ago', (t) => {
+  t.equal(
+    rt.parse('few hours ago').getTime(),
+    new Date(frozenTime - 3 * timeUnits.hour).getTime()
   );
   t.end();
 });
@@ -56,7 +72,7 @@ testBlock('hour from now', (t) => {
   t.end();
 });
 
-testBlock('a hour from now', (t) => {
+testBlock('an hour from now', (t) => {
   t.equal(
     rt.parse('a hour from now').getTime(),
     new Date(frozenTime + timeUnits.hour).getTime()
@@ -88,9 +104,9 @@ testBlock('in hour', (t) => {
   t.end();
 });
 
-testBlock('in a hour', (t) => {
+testBlock('in an hour', (t) => {
   t.equal(
-    rt.parse('in a hour').getTime(),
+    rt.parse('in an hour').getTime(),
     new Date(frozenTime + timeUnits.hour).getTime()
   );
   t.end();

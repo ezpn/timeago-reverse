@@ -32,6 +32,22 @@ testBlock('1 year ago', (t) => {
   t.end();
 });
 
+testBlock('about a year ago', (t) => {
+  t.equal(
+    rt.parse('about a year ago').getTime(),
+    new Date(frozenTime - timeUnits.year).getTime()
+  );
+  t.end();
+});
+
+testBlock('few years ago', (t) => {
+  t.equal(
+    rt.parse('few years ago').getTime(),
+    new Date(frozenTime - 3 * timeUnits.year).getTime()
+  );
+  t.end();
+});
+
 testBlock('20 years ago', (t) => {
   t.equal(
     rt.parse('20 years ago').getTime(),

@@ -32,6 +32,22 @@ testBlock('1 second ago', (t) => {
   t.end();
 });
 
+testBlock('about a second ago', (t) => {
+  t.equal(
+    rt.parse('about a second ago').getTime(),
+    new Date(frozenTime - timeUnits.second).getTime()
+  );
+  t.end();
+});
+
+testBlock('few seconds ago', (t) => {
+  t.equal(
+    rt.parse('few seconds ago').getTime(),
+    new Date(frozenTime - 3 * timeUnits.second).getTime()
+  );
+  t.end();
+});
+
 testBlock('20 seconds ago', (t) => {
   t.equal(
     rt.parse('20 seconds ago').getTime(),
