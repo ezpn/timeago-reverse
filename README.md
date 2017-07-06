@@ -26,6 +26,15 @@ const myDate = tr.parse('14 hours ago');
 - `just now`
 - `any moment now`
 
+### Special cases
+
+- `tomorrow`
+- `today`
+- `yesterday`
+- `less than a minute`
+- `less than a minute ago`
+- `in less than a minute`
+
 ### Past variations
 
 Format: `[a/an/${amount}] ${unit} [ago]`
@@ -47,6 +56,10 @@ Format: `[a/an/${amount}] ${unit} from now`
 - `a second from now`
 - `1 second from now`
 - `30 seconds from now`
+- `in second`
+- `in a second`
+- `in 1 second`
+- `in 20 seconds`
 
 
 ## Supported units
