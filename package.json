@@ -16,6 +16,7 @@
   "author": "Adam Urban",
   "license": "MIT",
   "devDependencies": {
+    "coveralls": "^2.13.1",
     "sinon": "^2.3.6",
     "tap-spec": "^4.1.1",
     "tape": "^4.7.0",
