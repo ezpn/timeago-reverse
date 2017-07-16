@@ -6,19 +6,13 @@ const rt = require('../index');
 const frozenTime = 1498749529000;
 
 const timeUnits = { second: 1000 };
-timeUnits.seconds = timeUnits.second;
-timeUnits.minute = timeUnits.second * 60;
-timeUnits.minutes = timeUnits.minute;
-timeUnits.hour = timeUnits.minute * 60;
-timeUnits.hours = timeUnits.hour;
-timeUnits.day = timeUnits.hour * 24;
-timeUnits.days = timeUnits.day;
-timeUnits.week = timeUnits.day * 7;
-timeUnits.weeks = timeUnits.week;
-timeUnits.month = timeUnits.day * 30;
-timeUnits.months = timeUnits.month;
-timeUnits.year = timeUnits.day * 365;
-timeUnits.years = timeUnits.year;
+timeUnits.seconds = timeUnits.secs = timeUnits.sec = timeUnits.second;
+timeUnits.minute = timeUnits.minutes = timeUnits.min = timeUnits.mins = timeUnits.second * 60;
+timeUnits.hour = timeUnits.hours = timeUnits.minute * 60;
+timeUnits.day = timeUnits.days = timeUnits.hour * 24;
+timeUnits.week = timeUnits.weeks = timeUnits.day * 7;
+timeUnits.month = timeUnits.months = timeUnits.mth = timeUnits.mths = timeUnits.day * 30;
+timeUnits.year = timeUnits.years = timeUnits.day * 365;
 
 // Adding before and after fake timers hooks
 const testBlock = around(test)

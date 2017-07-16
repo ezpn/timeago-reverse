@@ -70,9 +70,12 @@ Format: `[in] [a/an/${amount}] ${unit} [from now]`
 Supported in both singular and plural forms.
 
 - second(s)
+- sec(s)
 - minute(s)
+- min(s)
 - hour(s)
 - day(s)
 - week(s)
 - month(s)
+- mth(s)
 - year(s)
