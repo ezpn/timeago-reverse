@@ -19,7 +19,7 @@
   "author": "Adam Urban",
   "license": "MIT",
   "devDependencies": {
-    "coveralls": "^2.13.1",
+    "coveralls": "^3.0.0",
     "eslint": "^4.1.1",
     "istanbul": "^0.4.5",
     "sinon": "^3.0.0",
