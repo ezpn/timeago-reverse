@@ -1,0 +1,12 @@
+# Coverage directory used by tools like istanbul
+coverage
+
+# Tests directory
+tests
+
+# Travis CI configuration file
+.travis.yml
+
+# Eslint configuration files
+.eslintignore
+.eslintrc.json
